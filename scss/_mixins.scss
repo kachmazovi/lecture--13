@@ -1,0 +1,13 @@
+@mixin flex($gap, $dir: row, $js-c: space-between, $al-i: center) {
+  display: flex;
+  flex-direction: $dir;
+  justify-content: $js-c;
+  align-items: $al-i;
+  flex-wrap: wrap;
+  gap: $gap;
+}
+
+@mixin w-h($w, $h) {
+  width: $w;
+  height: $h;
+}
