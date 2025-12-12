@@ -18,28 +18,47 @@ body {
   .header {
     color: variables.$primary-color;
     font-size: variables.$fs-xl;
-    @include mixins.w-h(370px, 110px);
+    max-width: 370px;
+    @include mixins.w-h(100%, auto);
+    margin-bottom: 20px;
   }
 
   form {
-    @include mixins.flex(20px, row, space-around);
-    width: 1150px;
+    @include mixins.flex(2%, row, space-around);
+    max-width: 1150px;
+    width: 100%;
     margin-bottom: 50px;
 
     textarea {
       resize: none;
-      @include mixins.w-h(760px, 300px);
+      @include mixins.w-h(64%, 300px);
       border: 2px solid variables.$primary-border-color;
       padding: variables.$padd-m;
+      min-width: 250px;
+
+      @media (max-width: 750px) {
+        width: 90%;
+      }
     }
 
     .inputs {
       @include mixins.flex(20px, column);
+      width: 34%;
+      min-width: 250px;
 
       input {
-        @include mixins.w-h(370px, 60px);
+        height: 60px;
         border: 2px solid variables.$primary-border-color;
         padding: variables.$padd-m;
+        width: 100%;
+
+        @media (max-width: 750px) {
+          width: 45%;
+        }
+
+        @media (max-width: 480px) {
+          width: 100%;
+        }
       }
 
       input[type="submit"] {
@@ -47,13 +66,25 @@ body {
         background-color: variables.$primary-bg-color;
         color: white;
         font-size: variables.$fs-s;
+        transition: background-color 0.3s linear;
+        cursor: pointer;
+
+        &:hover {
+          background-color: lightblue;
+        }
+      }
+
+      @media (max-width: 750px) {
+        width: 90%;
+        flex-direction: row;
       }
     }
   }
 
   .contact-info {
     @include mixins.flex(220px, row, space-around);
-    width: 1150px;
+    max-width: 1150px;
+    width: 100%;
 
     .box {
       @include mixins.flex(8px, column, center);
@@ -75,6 +106,14 @@ body {
         font-size: variables.$fs-s;
         color: variables.$secondary-color;
       }
+    }
+
+    @media (max-width: 950px) {
+      gap: 20px;
+    }
+
+    @media (max-width: 480px) {
+      flex-direction: column;
     }
   }
 }

@@ -158,10 +158,12 @@ body .sm-header {
   font-size: 16px;
 }
 body .header {
-  color: red;
+  color: black;
   font-size: 50px;
-  width: 370px;
-  height: 110px;
+  max-width: 370px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
 body form {
   display: flex;
@@ -169,16 +171,23 @@ body form {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  gap: 20px;
-  width: 1150px;
+  gap: 2%;
+  max-width: 1150px;
+  width: 100%;
   margin-bottom: 50px;
 }
 body form textarea {
   resize: none;
-  width: 760px;
+  width: 64%;
   height: 300px;
   border: 2px solid rgb(212, 211, 211);
   padding: 20px;
+  min-width: 250px;
+}
+@media (max-width: 750px) {
+  body form textarea {
+    width: 90%;
+  }
 }
 body form .inputs {
   display: flex;
@@ -187,18 +196,41 @@ body form .inputs {
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
+  width: 34%;
+  min-width: 250px;
 }
 body form .inputs input {
-  width: 370px;
   height: 60px;
   border: 2px solid rgb(212, 211, 211);
   padding: 20px;
+  width: 100%;
+}
+@media (max-width: 750px) {
+  body form .inputs input {
+    width: 45%;
+  }
+}
+@media (max-width: 480px) {
+  body form .inputs input {
+    width: 100%;
+  }
 }
 body form .inputs input[type=submit] {
   border: 0;
   background-color: #5968f4;
   color: white;
   font-size: 16px;
+  transition: background-color 0.3s linear;
+  cursor: pointer;
+}
+body form .inputs input[type=submit]:hover {
+  background-color: lightblue;
+}
+@media (max-width: 750px) {
+  body form .inputs {
+    width: 90%;
+    flex-direction: row;
+  }
 }
 body .contact-info {
   display: flex;
@@ -207,7 +239,8 @@ body .contact-info {
   align-items: center;
   flex-wrap: wrap;
   gap: 220px;
-  width: 1150px;
+  max-width: 1150px;
+  width: 100%;
 }
 body .contact-info .box {
   display: flex;
@@ -225,10 +258,20 @@ body .contact-info .box .icon {
   font-size: 26px;
 }
 body .contact-info .box p {
-  color: red;
+  color: black;
   font-size: 20px;
 }
 body .contact-info .box span:not(.icon) {
   font-size: 16px;
   color: #99999a;
+}
+@media (max-width: 950px) {
+  body .contact-info {
+    gap: 20px;
+  }
+}
+@media (max-width: 480px) {
+  body .contact-info {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=styles.css.map */
